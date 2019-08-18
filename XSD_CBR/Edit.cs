@@ -13,9 +13,14 @@ namespace XSD_CBR
 {
     public partial class Edit : Form
     {
-        public Edit()
+        private ED542 _ed; 
+
+        public Edit(Form owner, ED542 ed)
         {
+            //if (ed == null) new doc                
             InitializeComponent();
+            Owner = owner;
+            _ed = ed;
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
