@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -54,6 +55,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="xsd\cbr_ed542_v2019.2.0.Designer.cs" />
+    <Compile Include="xsd\Entity\ED542.cs" />
+    <Compile Include="xsd\Entity\EntityBase.cs" />
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -77,15 +81,19 @@
     </Compile>
     <None Include="xsd\cbr_ed542_v2019.2.0.xsd">
       <SubType>Designer</SubType>
+      <Generator>Xsd2CodeCustomTool</Generator>
     </None>
     <None Include="xsd\cbr_ed_basetypes_v2018.3.0.xsd">
       <SubType>Designer</SubType>
+      <Generator>Xsd2CodeCustomTool</Generator>
     </None>
     <None Include="xsd\cbr_ed_leaftypes_v2019.2.0.xsd">
       <SubType>Designer</SubType>
+      <Generator>Xsd2CodeCustomTool</Generator>
     </None>
     <None Include="xsd\cbr_ed_objects_v2019.2.0.xsd">
       <SubType>Designer</SubType>
+      <Generator>Xsd2CodeCustomTool</Generator>
     </None>
   </ItemGroup>
   <ItemGroup>
