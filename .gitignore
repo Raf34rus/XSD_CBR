@@ -240,3 +240,4 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/XSD_CBR/xsd/cbr_ed542_v2019.2.0.Designer.cs
