@@ -18,30 +18,28 @@ using System.Collections.Generic;
 [DebuggerStepThrough]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [XmlTypeAttribute(Namespace="urn:cbr-ru:ed:v2.0")]
-[XmlRootAttribute(Namespace="urn:cbr-ru:ed:v2.0", IsNullable=false)]
-public partial class ED542 : ED
+public partial class PartInfo : EntityBase<PartInfo>
 {
-        [XmlElement("EDRefID")]
-        public EDRefID EDRefID1 { get; set; }
     /// <summary>
-    /// Тип запроса
+    /// Номер части.
+    /// </summary>
+    /// <summary>
+    /// Partition Number.
+    /// </summary>
+        [XmlAttribute(DataType="integer")]
+        public string PartNo { get; set; }
+    /// <summary>
+    /// Количество частей.
+    /// </summary>
+    /// <summary>
+    /// Quantity of Partitions.
+    /// </summary>
+        [XmlAttribute(DataType="integer")]
+        public string PartQuantity { get; set; }
+    /// <summary>
+    /// Уникальный идентификатор совокупности частей
     /// </summary>
         [XmlAttribute]
-        public string RepeatReceptInqCode { get; set; }
-    /// <summary>
-    /// Тип ЭС.
-    /// </summary>
-        [XmlAttribute]
-        public string EDTypeNo { get; set; }
-    /// <summary>
-    /// Номер АРМ.
-    /// </summary>
-        [XmlAttribute]
-        public string ARMNo { get; set; }
-    
-    public ED542()
-    {
-        EDRefID1 = new EDRefID();
-    }
+        public string PartAggregateID { get; set; }
 }
 }

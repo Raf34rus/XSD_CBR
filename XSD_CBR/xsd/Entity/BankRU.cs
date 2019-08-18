@@ -18,30 +18,23 @@ using System.Collections.Generic;
 [DebuggerStepThrough]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [XmlTypeAttribute(Namespace="urn:cbr-ru:ed:v2.0")]
-[XmlRootAttribute(Namespace="urn:cbr-ru:ed:v2.0", IsNullable=false)]
-public partial class ED542 : ED
+public partial class BankRU : EntityBase<BankRU>
 {
-        [XmlElement("EDRefID")]
-        public EDRefID EDRefID1 { get; set; }
     /// <summary>
-    /// Тип запроса
+    /// БИК КО, филиала КО, иностранного банка или ПБР (поле 11 или 14).
+    /// </summary>
+    /// <summary>
+    /// Bank, Bank Branch or CBR Subdivision BIC (Field 11 or 14).
     /// </summary>
         [XmlAttribute]
-        public string RepeatReceptInqCode { get; set; }
+        public string BIC { get; set; }
     /// <summary>
-    /// Тип ЭС.
+    /// Номер счета банка плательщика (поле 12) или номер счета банка получателя средств (поле 15).
+    /// </summary>
+    /// <summary>
+    /// Payer Agent Account Number (Field 12) or Beneficiary Agent Account Number (Field 15) opened in CBR Subdivision.
     /// </summary>
         [XmlAttribute]
-        public string EDTypeNo { get; set; }
-    /// <summary>
-    /// Номер АРМ.
-    /// </summary>
-        [XmlAttribute]
-        public string ARMNo { get; set; }
-    
-    public ED542()
-    {
-        EDRefID1 = new EDRefID();
-    }
+        public string CorrespAcc { get; set; }
 }
 }

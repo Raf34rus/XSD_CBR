@@ -18,30 +18,23 @@ using System.Collections.Generic;
 [DebuggerStepThrough]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [XmlTypeAttribute(Namespace="urn:cbr-ru:ed:v2.0")]
-[XmlRootAttribute(Namespace="urn:cbr-ru:ed:v2.0", IsNullable=false)]
-public partial class ED542 : ED
+public partial class AccDocRefID : EntityBase<AccDocRefID>
 {
-        [XmlElement("EDRefID")]
-        public EDRefID EDRefID1 { get; set; }
     /// <summary>
-    /// Тип запроса
+    /// Номер распоряжения (поле 3).
+    /// </summary>
+    /// <summary>
+    /// Initial Paper Document Number.
     /// </summary>
         [XmlAttribute]
-        public string RepeatReceptInqCode { get; set; }
+        public string AccDocNo { get; set; }
     /// <summary>
-    /// Тип ЭС.
+    /// Дата составления распоряжения (поле 4).
     /// </summary>
-        [XmlAttribute]
-        public string EDTypeNo { get; set; }
     /// <summary>
-    /// Номер АРМ.
+    /// Initial Paper Document Issue Date.
     /// </summary>
-        [XmlAttribute]
-        public string ARMNo { get; set; }
-    
-    public ED542()
-    {
-        EDRefID1 = new EDRefID();
-    }
+        [XmlAttribute(DataType="date")]
+        public System.DateTime AccDocDate { get; set; }
 }
 }
