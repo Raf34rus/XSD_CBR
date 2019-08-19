@@ -26,6 +26,8 @@ namespace XSD_CBR
         /// </summary>
         public void UpdateFileList()
         {
+            if (!Directory.Exists(CommonConst.constFolderFiles))
+                return;
             listBoxFiles.BeginUpdate();
             try
             {
