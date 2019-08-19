@@ -1,6 +1,6 @@
 ﻿namespace XSD_CBR
 {
-    partial class Result
+    partial class fDownload
     {
         /// <summary>
         /// Required designer variable.
@@ -28,68 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.buttonDownload = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.textBoxURL = new System.Windows.Forms.TextBox();
             this.buttonClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // listBox1
+            // buttonDownload
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(15, 25);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(655, 121);
-            this.listBox1.TabIndex = 0;
+            this.buttonDownload.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.buttonDownload.Location = new System.Drawing.Point(381, 38);
+            this.buttonDownload.Name = "buttonDownload";
+            this.buttonDownload.Size = new System.Drawing.Size(75, 23);
+            this.buttonDownload.TabIndex = 0;
+            this.buttonDownload.Text = "Скачать";
+            this.buttonDownload.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(20, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 13);
+            this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Предупреждения";
+            this.label1.Text = "Ссылка";
             // 
-            // label2
+            // textBoxURL
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 149);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Ошибки";
-            // 
-            // listBox2
-            // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(15, 165);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(655, 121);
-            this.listBox2.TabIndex = 3;
+            this.textBoxURL.Location = new System.Drawing.Point(72, 12);
+            this.textBoxURL.Name = "textBoxURL";
+            this.textBoxURL.Size = new System.Drawing.Size(465, 20);
+            this.textBoxURL.TabIndex = 2;
             // 
             // buttonClose
             // 
-            this.buttonClose.Location = new System.Drawing.Point(594, 292);
+            this.buttonClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.buttonClose.Location = new System.Drawing.Point(462, 38);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(75, 23);
-            this.buttonClose.TabIndex = 4;
+            this.buttonClose.TabIndex = 3;
             this.buttonClose.Text = "Закрыть";
             this.buttonClose.UseVisualStyleBackColor = true;
             // 
-            // Result
+            // fDownload
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(681, 325);
+            this.ClientSize = new System.Drawing.Size(547, 69);
             this.Controls.Add(this.buttonClose);
-            this.Controls.Add(this.listBox2);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBoxURL);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listBox1);
-            this.Name = "Result";
-            this.Text = "Результат проверки";
+            this.Controls.Add(this.buttonDownload);
+            this.Name = "fDownload";
+            this.Text = "Скачать ";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -97,10 +88,9 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button buttonDownload;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.TextBox textBoxURL;
         private System.Windows.Forms.Button buttonClose;
     }
 }

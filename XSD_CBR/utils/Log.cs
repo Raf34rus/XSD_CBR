@@ -14,7 +14,7 @@ namespace XSD_CBR.utils
         private static object sync = new object();
         private static string GetFullPath()
         {
-            string pathToLog = Path.Combine(Application.UserAppDataPath, "Log");
+            string pathToLog = CommonConst.AppPathLog;
             if (!Directory.Exists(pathToLog))
                 Directory.CreateDirectory(pathToLog); // Создаем директорию, если нужно
             string filename = Path.Combine(pathToLog, string.Format("day_{0:dd.MM.yyy}.log", DateTime.Now));

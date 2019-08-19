@@ -1,5 +1,5 @@
 
-namespace classByXSD
+namespace ClassByXSD
 {
 using System;
 using System.Diagnostics;
@@ -33,9 +33,9 @@ public partial class ED542 : ED
     /// </summary>
         [XmlAttribute]
         public string EDTypeNo { get; set; }
-    /// <summary>
-    /// Номер АРМ.
-    /// </summary>
+        /// <summary>
+        /// Номер АРМ.
+        /// </summary>
         [XmlAttribute]
         public string ARMNo { get; set; }
     

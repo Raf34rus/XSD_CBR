@@ -16,7 +16,7 @@ namespace XSD_CBR
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+            Application.Run(new fMain());
         }
     }
 }

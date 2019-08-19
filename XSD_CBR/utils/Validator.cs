@@ -7,22 +7,32 @@ using XSD_CBR.utils;
 
 namespace XSD_CBR
 {
-    public class Validator
+    /// <summary>
+    /// Проверить валидность XML по схемам XSD
+    /// </summary>
+    public class ValidatorXML
     {
         XmlSchemaSet schemaset;
-        StringBuilder errors, warnings;
-        static Validator instance;
+        StringBuilder errors;
+        StringBuilder warnings;
+        static ValidatorXML instance;
         static object lockObject = new Object();
         public string ErrorMessage { get; set; }
         public string WarningMessage { get; set; }
-        
+        public bool WarningAsErrors { get; set; }
 
-        public static Validator Instance
+        public static ValidatorXML Instance
         {
             get { return instance; }
         }
-
-        public Validator(string schemaPath)
+        public bool IsExistError()
+        {
+            return (errors.Length > 0) || (warnings.Length > 0);
+        }
+        /// <summary>
+        /// Загрузить схемы XSD 
+        /// </summary>
+        public ValidatorXML(string schemaPath)
         {
             WarningAsErrors = true;
             schemaset = new XmlSchemaSet();
@@ -32,16 +42,23 @@ namespace XSD_CBR
             }
             instance = this;
         }
-
+        /// <summary>
+        /// Ловим ошибки валидации
+        /// </summary>
         private void OnValidateReadSchema(object ss, ValidationEventArgs e)
         {
             Log.Write(e);
         }
-        public bool WarningAsErrors { get; set; }
+        /// <summary>
+        /// Координаты ошибки 
+        /// </summary>
         private string FormatLineInfo(XmlSchemaException xmlSchemaException)
         {
-            return string.Format(" Line:{0} Position:{1}", xmlSchemaException.LineNumber, xmlSchemaException.LinePosition);
+            return string.Format(" Строка:{0} Позиция:{1}", xmlSchemaException.LineNumber, xmlSchemaException.LinePosition);
         }
+        /// <summary>
+        /// Собитие перехвата ошибок при построчном чтении XML
+        /// </summary>
         protected void OnValidate(object ss, ValidationEventArgs vae)
         {
             Log.Write(vae);
@@ -50,7 +67,10 @@ namespace XSD_CBR
             else
                 warnings.AppendLine(vae.Message + FormatLineInfo(vae.Exception));
         }
-        public void Validate(String doc)
+        /// <summary>
+        /// Валидация строки XML документа
+        /// </summary>
+        public bool Validate(String doc)
         {
             lock (lockObject)
             {
@@ -59,7 +79,7 @@ namespace XSD_CBR
                 
                 XmlReaderSettings settings = new XmlReaderSettings();
                 settings.CloseInput = true;
-                settings.ValidationEventHandler += new ValidationEventHandler((o, e) => OnValidate(o, e));  // Your callback...
+                settings.ValidationEventHandler += new ValidationEventHandler((o, e) => OnValidate(o, e));  // Событие 
                 settings.ValidationType = ValidationType.Schema;
                 settings.Schemas.Add(schemaset);
                 settings.ValidationFlags =
@@ -78,11 +98,12 @@ namespace XSD_CBR
                 }
                 catch (XmlException e)
                 {
-                    errors.AppendLine(string.Format("Error at line:{0} Posizione:{1}", e.LineNumber, e.LinePosition));
+                    errors.AppendLine(string.Format("Ошибка в строке:{0} Позиция:{1}", e.LineNumber, e.LinePosition));
                 }
                 ErrorMessage = errors.ToString();
                 WarningMessage = warnings.ToString();
             }
+            return !IsExistError();
         }
 
     }

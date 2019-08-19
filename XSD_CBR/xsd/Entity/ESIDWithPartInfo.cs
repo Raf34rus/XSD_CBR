@@ -1,5 +1,5 @@
 
-namespace classByXSD
+namespace ClassByXSD
 {
 using System;
 using System.Diagnostics;
