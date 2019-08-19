@@ -35,22 +35,20 @@ namespace XSD_CBR
             Log.Write(msg);
             MessageBox.Show(
                 msg, "Сообщение",
-                MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1,
-                MessageBoxOptions.DefaultDesktopOnly);
+                MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
         }
         public static DialogResult ShowQuestionYesNo(string msg)
         {
             return MessageBox.Show(
                 msg, "Вопрос",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1,
-                MessageBoxOptions.DefaultDesktopOnly);
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
         }
         public static void ShowError(Exception ex)
         {
             Log.Write(ex);
-            MessageBox.Show(string.Format("ERROR! {0}", ex.Message),
-                    "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1,
-                    MessageBoxOptions.DefaultDesktopOnly);
+            MessageBox.Show(
+                string.Format("ERROR! {0}", ex.Message),
+                "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
         }
     }
 }
