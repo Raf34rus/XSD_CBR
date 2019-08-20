@@ -29,10 +29,9 @@
         private void InitializeComponent()
         {
             this.label2 = new System.Windows.Forms.Label();
-            this.memoEditError = new DevExpress.XtraEditors.MemoEdit();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonClose = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.memoEditError.Properties)).BeginInit();
+            this.memoEditError = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,17 +43,6 @@
             this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Ошибки";
-            // 
-            // memoEditError
-            // 
-            this.memoEditError.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.memoEditError.Location = new System.Drawing.Point(12, 25);
-            this.memoEditError.Name = "memoEditError";
-            this.memoEditError.Properties.WordWrap = false;
-            this.memoEditError.Size = new System.Drawing.Size(668, 276);
-            this.memoEditError.TabIndex = 6;
             // 
             // panel1
             // 
@@ -76,17 +64,25 @@
             this.buttonClose.Text = "Закрыть";
             this.buttonClose.UseVisualStyleBackColor = true;
             // 
+            // memoEditError
+            // 
+            this.memoEditError.Location = new System.Drawing.Point(12, 25);
+            this.memoEditError.Name = "memoEditError";
+            this.memoEditError.Size = new System.Drawing.Size(671, 279);
+            this.memoEditError.TabIndex = 8;
+            this.memoEditError.Text = "";
+            this.memoEditError.WordWrap = false;
+            // 
             // fResult
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(695, 340);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.memoEditError);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Name = "fResult";
             this.Text = "Результат проверки";
-            ((System.ComponentModel.ISupportInitialize)(this.memoEditError.Properties)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -95,8 +91,8 @@
 
         #endregion
         private System.Windows.Forms.Label label2;
-        private DevExpress.XtraEditors.MemoEdit memoEditError;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button buttonClose;
+        private System.Windows.Forms.RichTextBox memoEditError;
     }
 }
